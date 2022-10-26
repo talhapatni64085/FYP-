@@ -3,9 +3,10 @@ import{View , Text , Image, StyleSheet, useWindowDimensions, Alert} from 'react-
 import Logo from '../../assets/images/logo_1.png';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
+import SignUp from './SignUp';
 
 
-const SignIn = () => {
+const SignIn = (props) => {
     const [ username, setUsername] = useState('');
     const [ password, setPassword] = useState('');
 
@@ -14,7 +15,7 @@ const SignIn = () => {
     const onSignInPressed = () => {
         if(username == 'talha' && password == '123') {
             Alert.alert('Login Successfully');
-            navigation.navigate("Register");
+        props.navigation.navigate(SignUp)
         }
         else {
             Alert.alert('Username & Password does not match');
@@ -30,7 +31,7 @@ const SignIn = () => {
     };
 
     const onSignUpPressed = () => {
-        navigation.navigate('Register');
+        //navigation.navigate('Register');
     };
 
  return (
@@ -41,6 +42,7 @@ const SignIn = () => {
        placeholder="Username" 
        value={username} 
        setvalue={setUsername}
+
        />
        <CustomInput 
        placeholder="Password" 
@@ -51,7 +53,7 @@ const SignIn = () => {
 
     <CustomButton 
     text="Sign In" 
-    onPress={onSignInPressed}
+    onPress = {onSignInPressed}   
     bgColor='#E7EAF4'
     fgColor='#4765A9' 
     />

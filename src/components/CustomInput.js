@@ -9,7 +9,7 @@ const CustomInput = ({value, setvalue , placeholder, secureTextEntry}) => {
             onChangeText={setvalue} 
             placeholder={placeholder} 
             style = {styles.input}
-            secureTextEntry={true}
+            secureTextEntry = {true}
             />
         </View>
     );
