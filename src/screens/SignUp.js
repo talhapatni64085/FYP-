@@ -3,9 +3,12 @@ import{View , Text , StyleSheet, useWindowDimensions, Image} from 'react-native'
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import Logo from '../../assets/images/logo_1.png';
+import Home from './Home';
+import SignIn from './SignIn';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
-const SignUp = () => {
+const SignUp = (props) => {
     const [ email, setEmail] = useState('');
     const [ password, setPassword] = useState('');
     const [ cpass, setCpass] = useState('');
@@ -13,11 +16,7 @@ const SignUp = () => {
     const{height} = useWindowDimensions();
 
     const onSignInPressed = () => {
-        console.warn('Login');
-    };
-
-    const onForgotPasswordPressed = () => {
-        console.warn('onForgotPasswordPressed');
+        props.navigation.navigate(SignIn)
     };
 
     const onGoogle = () => {
@@ -25,7 +24,7 @@ const SignUp = () => {
     };
 
     const onSignUpPressed = () => {
-        navigation.navigate('Register');
+        props.navigation.navigate(Home)
     };
 
     const onTermsOfUsePressed = () => {
@@ -37,6 +36,7 @@ const SignUp = () => {
     };
 
  return (
+    <ScrollView>
     <View style={styles.root}>
        <Text style={styles.title}>Creat an Account</Text>
        <Image source = {Logo} 
@@ -61,7 +61,7 @@ const SignUp = () => {
     
     <CustomButton 
     text="Register" 
-    onPress={onSignInPressed}
+    onPress={onSignUpPressed}
     bgColor='#E7EAF4'
     fgColor='#4765A9' 
     />
@@ -81,9 +81,11 @@ const SignUp = () => {
     <CustomButton 
     text="Have an account?" 
     onPress={onSignInPressed} 
+    fgColor='black'
     type="TERTIARY"
     />
     </View>
+    </ScrollView>
  );
 };
 
@@ -107,10 +109,9 @@ root: {
     },
     link:{
         color:'#FDB075',
-
     },
     logo : {
-        marginTop: 60,
+        marginTop: 20,
         width : '70%' , 
         maxHeight : 200 ,
         maxWidth: 300,

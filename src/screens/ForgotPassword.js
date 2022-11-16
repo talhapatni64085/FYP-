@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import{View , Text , StyleSheet} from 'react-native';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
+import SignIn from './SignIn';
 
 
-const ForgotPassword = () => {
+const ForgotPassword = (props) => {
     const [username, setUsername] = useState('');
 
     const onSignInPressed = () => {
-        console.warn("Sign In");
+        props.navigation.navigate(SignIn)
     };
 
     const onSignUpPressed = () => {
@@ -47,6 +48,7 @@ const ForgotPassword = () => {
     text="Back to Sign in" 
     onPress={onSignInPressed} 
     type="TERTIARY"
+    fgColor='black'
     />
 
     </View>

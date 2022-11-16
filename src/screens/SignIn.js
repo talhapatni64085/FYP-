@@ -1,10 +1,11 @@
 import React, {useState} from 'react'; 
-import{View , Text , Image, StyleSheet, useWindowDimensions, Alert} from 'react-native';
+import{View , Text , Image, StyleSheet, useWindowDimensions, Alert, TextInput} from 'react-native';
 import Logo from '../../assets/images/logo_1.png';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import SignUp from './SignUp';
-
+import ForgotPassword from './ForgotPassword';
+import Home from './Home';
 
 const SignIn = (props) => {
     const [ username, setUsername] = useState('');
@@ -15,7 +16,7 @@ const SignIn = (props) => {
     const onSignInPressed = () => {
         if(username == 'talha' && password == '123') {
             Alert.alert('Login Successfully');
-        props.navigation.navigate(SignUp)
+        props.navigation.navigate(Home)
         }
         else {
             Alert.alert('Username & Password does not match');
@@ -23,7 +24,7 @@ const SignIn = (props) => {
     };
 
     const onForgotPasswordPressed = () => {
-        navigation.navigate('FP');
+        props.navigation.navigate(ForgotPassword)
     };
 
     const onGoogle = () => {
@@ -31,7 +32,7 @@ const SignIn = (props) => {
     };
 
     const onSignUpPressed = () => {
-        //navigation.navigate('Register');
+        props.navigation.navigate(SignUp)
     };
 
  return (
@@ -42,8 +43,13 @@ const SignIn = (props) => {
        placeholder="Username" 
        value={username} 
        setvalue={setUsername}
-
        />
+       {/* <View style={styles.container}>
+       <TextInput style={styles.input}
+                        placeholder="Search"
+                        placeholderTextColor="#b1e5d3"
+                        />
+       </View> */}
        <CustomInput 
        placeholder="Password" 
        value={password} 
@@ -61,6 +67,7 @@ const SignIn = (props) => {
     <CustomButton 
     text="forgot password?" 
     onPress={onForgotPasswordPressed} 
+    fgColor='black'
     type="TERTIARY"
     />
 
@@ -74,6 +81,7 @@ const SignIn = (props) => {
     <CustomButton 
     text="Not Registered yet? Create One" 
     onPress={onSignUpPressed} 
+    fgColor='black'
     type="TERTIARY"
     />
     </View>
@@ -91,6 +99,21 @@ root: {
         width : '70%' , 
         maxHeight : 200 ,
         maxWidth: 300,
+    },
+    container:{
+        backgroundColor:"#FFF",
+                   paddingVertical:8,
+                   paddingHorizontal:20,
+                   marginHorizontal:20,
+                   borderRadius:15,
+                   marginTop:25,
+                   flexDirection:"row",
+                   alignItems:"center",
+    },
+    input:{
+        fontWeight:"bold",
+                            fontSize:18,
+                            width:260
     },
 });
 

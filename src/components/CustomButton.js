@@ -32,9 +32,11 @@ const styles = StyleSheet.create({
 
     container_PRIMARY: {
         backgroundColor: '#3B71F3',
+        bgColor:'black'
     },
 
     container_TERTIARY: {
+        backgroundColor:'black'
     },
 
     text:{

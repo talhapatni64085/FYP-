@@ -4,8 +4,9 @@ import {TextInput,ScrollView,TouchableOpacity} from 'react-native-gesture-handle
 import { LinearGradient } from 'expo-linear-gradient'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
+import Ground from './Ground'
 
-const Home = () => {
+const Home = (props) => {
     return(
         <View style={{
             backgroundColor:"#FFF",
@@ -18,7 +19,7 @@ const Home = () => {
                borderBottomRightRadius:20,
                paddingHorizontal:20
            }}>
-            <View style={{width:"50%", alignItems:'flex-start', marginTop:'15%'}}>
+            <View style={{width:"50%", alignItems:'flex-start', marginTop:20}}>
             <Icons
                     name='face-man-profile' size={30} color='white'
                />
@@ -34,10 +35,10 @@ const Home = () => {
                             fontSize:28,
                             color:"#FFF",
                             fontWeight:"bold",
-                            marginTop:50,
+                            marginTop:30,
                         }}>Hi Player</Text>
                    </View>
-                   <View style={{width:"50%",alignItems:"flex-end", marginTop:-125}}>
+                   <View style={{width:"50%",alignItems:"flex-end", marginTop:-100}}>
                     
                         <Icon name="notifications" size={30} color='white'/>
                         
@@ -92,7 +93,8 @@ const Home = () => {
                         }}
                     />
                     <TouchableOpacity 
-                        //onPress={()=>navigation.navigate("Detail")}
+                    //onpress={props.navigation.navigate(Ground)}
+                        //onPress={()=>navigation.navigate("Ground")}
                         style={{
                             height:300,
                             elevation:2,

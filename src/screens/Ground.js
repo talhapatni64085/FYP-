@@ -18,7 +18,7 @@ const Ground = () => {
            borderBottomRightRadius:20,
            paddingHorizontal:20
        }}>
-        <View style={{width:"50%", alignItems:'flex-start', marginTop:'15%'}}>
+        <View style={{width:"50%", alignItems:'flex-start', marginTop:'5%'}}>
         <Icons
                 name='face-man-profile' size={30} color='white'
            />
@@ -28,45 +28,39 @@ const Ground = () => {
                alignItems:"center",
                width:"100%"
            }}>
+            
                <View>
                     <Text style={{
                         fontSize:28,
                         color:"#FFF",
                         fontWeight:"bold",
-                        marginLeft:'45%',
-                        marginTop:-25,
+                        marginLeft:'35%',
+                        marginTop:-10,
                     }}>Grounds</Text>
                     <Text style={{
                         fontSize:18,
-                        marginLeft:'25%',
+                        marginLeft:'10%',
                         color:"#FFF",
                         fontWeight:'bold',
+                        marginTop: -10,
                     }}>
                         Pick a Ground with just one click</Text>
                </View>
-               <View style={{width:"15%",alignItems:"flex-end", marginTop:-60}}>
+               <View style={{width:"10%",alignItems:"flex-end", marginTop:-60}}>
                 
                     <Icon name="notifications" size={30} color='white'/>
                     
                </View>
            </View>
            </View>
-       <LinearGradient
-        colors={["rgba(0,164,109,0.4)", "transparent"]}
-        style={{
-            left:0,
-            right:0,
-            height:90,
-            marginTop:-80
-        }}
-       >
-        <View style={{
-                   backgroundColor:"#FFF",
-                   paddingVertical:8,
+       <View>
+       <View style={{
+                   backgroundColor:"white",
+                   paddingVertical:25,
                    paddingHorizontal:20,
                    marginHorizontal:20,
                    borderRadius:15,
-                   marginTop:25,
+                   marginTop:0,
                    flexDirection:"row",
                    alignItems:"center"
                }}>
@@ -75,28 +69,18 @@ const Ground = () => {
                         placeholderTextColor="#b1e5d3"
                         style={{
                             fontWeight:"bold",
+                            marginTop:-30,
                             fontSize:18,
                             width:260
                         }}
                    />
                </View>
-            </LinearGradient>
+       </View>
         <ScrollView 
                     vertical
                     showsVerticalScrollIndicator={false}
                     style={{height:400}}
                 >
-<LinearGradient
-                        colors={["rgba(0,164,109,0.09)", "transparent"]}
-                        style={{
-                            position:"absolute",
-                            left:0,
-                            right:0,
-                            height:100,
-                            marginTop:-100,
-                            top:0
-                        }}
-                    />
 
                     <TouchableOpacity 
                         //onPress={()=>navigation.navigate("Detail")}
